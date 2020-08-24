@@ -9,6 +9,8 @@ public class SceneManager : MonoBehaviour {
     public GameObject m_prevButton;
     public GameObject m_nextButton;
     public GameObject m_initButton;
+    public GameObject m_tipText;
+    public GameObject m_tipImage;
     public GameObject m_logo;
 
     private int m_sceneIndex = 0;
@@ -24,6 +26,8 @@ public class SceneManager : MonoBehaviour {
         m_prevButton.SetActive(true);
         m_nextButton.SetActive(true);
         m_initButton.SetActive(false);
+        m_tipText.SetActive(false);
+        m_tipImage.SetActive(false);
         m_logo.SetActive(false);
         m_sceneObjects[0].SetActive(true);
     }

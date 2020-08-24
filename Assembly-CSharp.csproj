@@ -67,6 +67,8 @@
      <Compile Include="Assets\BOXOPHOBIC\Utils\Scripts\StyledInspector\StyledTexturePreview.cs" />
      <Compile Include="Assets\BOXOPHOBIC\Utils\Scripts\StyledMono\StyledMonoBehaviour.cs" />
      <Compile Include="Assets\BOXOPHOBIC\Utils\Scripts\StyledMono\StyledMonoHideScriptField.cs" />
+     <Compile Include="Assets\OutlineShader\PostProcessOutline.cs" />
+     <Compile Include="Assets\OutlineShader\Scripts\RenderReplacementShaderToTexture.cs" />
      <Compile Include="Assets\Scripts\ButtonClick.cs" />
      <Compile Include="Assets\Scripts\CameraDrag.cs" />
      <Compile Include="Assets\Scripts\DiagramAnim.cs" />
@@ -76,12 +78,15 @@
      <Compile Include="Assets\Scripts\Panel.cs" />
      <Compile Include="Assets\Scripts\PullTab.cs" />
      <Compile Include="Assets\Scripts\SceneManager.cs" />
+     <Compile Include="Assets\Scripts\SetRenderQueue.cs" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />
      <None Include="Assets\BOXOPHOBIC\Skybox Cubemap Extended\Core\Shaders\Skybox Cubemap Extended.shader" />
+     <None Include="Assets\OutlineShader\Outline.shader" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
-     <None Include="Assets\Materials\Outline\OutlineShader.shader" />
+     <None Include="Assets\OutlineShader\Shaders\HiddenNormalsTexture.shader" />
+     <None Include="Assets\Materials\Outline\Old\OutlineShader.shader" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface.shader" />
      <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
@@ -664,11 +669,17 @@
  <Reference Include="Unity.CollabProxy.Editor">
  <HintPath>C:/Users/nicho/Desktop/SEER/SEER_WebVR/SEER_WebVR/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
  </Reference>
+ <Reference Include="Unity.Postprocessing.Editor">
+ <HintPath>C:/Users/nicho/Desktop/SEER/SEER_WebVR/SEER_WebVR/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll</HintPath>
+ </Reference>
  <Reference Include="Unity.Rider.Editor">
  <HintPath>C:/Users/nicho/Desktop/SEER/SEER_WebVR/SEER_WebVR/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
  <HintPath>C:/Users/nicho/Desktop/SEER/SEER_WebVR/SEER_WebVR/Library/ScriptAssemblies/Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Postprocessing.Runtime">
+ <HintPath>C:/Users/nicho/Desktop/SEER/SEER_WebVR/SEER_WebVR/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
  </Reference>
  <Reference Include="Unity.ShaderGraph.Editor">
  <HintPath>C:/Users/nicho/Desktop/SEER/SEER_WebVR/SEER_WebVR/Library/ScriptAssemblies/Unity.ShaderGraph.Editor.dll</HintPath>
