@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class Panel : MonoBehaviour
 {
+    public SceneManager scene_manager;
+
     public Animator panel_animator;
     public GameObject[] m_textObjects;
     public GameObject[] m_otherPanels;
@@ -35,5 +37,12 @@ public class Panel : MonoBehaviour
 
         //reveal text
         for (int i = 0; i < m_textObjects.Length; i++) m_textObjects[i].SetActive(true);
+
+        scene_manager.m_panel_selected = true;
+        scene_manager.m_current_panel_anim = select_animation_name;
+        scene_manager.m_panel_animator = panel_animator;
+        scene_manager.textObjects = m_textObjects;
+        scene_manager.otherPanels = m_otherPanels;
     }
+
 }

@@ -13,6 +13,13 @@ public class SceneManager : MonoBehaviour {
     public GameObject m_tipImage;
     public GameObject m_logo;
 
+    //These vars are changed externally by other panels when you select them
+    public bool m_panel_selected;
+    public string m_current_panel_anim;
+    public Animator m_panel_animator;
+    public GameObject[] textObjects;
+    public GameObject[] otherPanels;
+
     private int m_sceneIndex = 0;
 
     // Start is called before the first frame update
@@ -36,21 +43,38 @@ public class SceneManager : MonoBehaviour {
 
         //Debug.Log("Switch scenes triggered. " + next);
 
-        //This will switch out the empty parent objects instansiated in the scene and advance in the array.
-
-        m_sceneObjects[m_sceneIndex].SetActive(false);
-
-        if (next) {
-            if (m_sceneIndex < m_sceneObjects.Length - 1) m_sceneIndex++;
+        //Conditional check to see if a panel has been selected
+        if (m_panel_selected && !next) {
+            reversePanel();
         } else {
-            if (m_sceneIndex > 0) m_sceneIndex--;
+            //This will switch out the empty parent objects instansiated in the scene and advance in the array.
+
+            m_sceneObjects[m_sceneIndex].SetActive(false);
+
+            if (next) {
+                if (m_sceneIndex < m_sceneObjects.Length - 1) m_sceneIndex++;
+            } else {
+                if (m_sceneIndex > 0) m_sceneIndex--;
+            }
+
+            /*if (next && m_sceneIndex < sceneObjects.Length - 1) m_sceneIndex++;
+            else if (m_sceneIndex > 0) m_sceneIndex--;*/
+
+            m_sceneObjects[m_sceneIndex].SetActive(true);
         }
 
-        /*if (next && m_sceneIndex < sceneObjects.Length - 1) m_sceneIndex++;
-        else if (m_sceneIndex > 0) m_sceneIndex--;*/
+    }
 
-        m_sceneObjects[m_sceneIndex].SetActive(true);
+    public void reversePanel() {
+        m_panel_animator.CrossFade(m_current_panel_anim + "_r", 0.1f);
 
+        for (int i = 0; i < otherPanels.Length; i++) {
+            otherPanels[i].SetActive(true);
+        }
+
+        for (int i = 0; i < textObjects.Length; i++) textObjects[i].SetActive(false);
+
+        m_panel_selected = false;
     }
 
 
