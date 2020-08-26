@@ -41,13 +41,18 @@ public class SceneManager : MonoBehaviour {
 
     public void switchScenes(bool next) {
 
-        //Debug.Log("Switch scenes triggered. " + next);
+        
 
         //Conditional check to see if a panel has been selected
         if (m_panel_selected && !next) {
             reversePanel();
         } else {
             //This will switch out the empty parent objects instansiated in the scene and advance in the array.
+
+            if (m_panel_selected) {
+                Debug.Log("Switch scenes triggered. " + next);
+                reversePanel();
+            }
 
             m_sceneObjects[m_sceneIndex].SetActive(false);
 
@@ -56,9 +61,6 @@ public class SceneManager : MonoBehaviour {
             } else {
                 if (m_sceneIndex > 0) m_sceneIndex--;
             }
-
-            /*if (next && m_sceneIndex < sceneObjects.Length - 1) m_sceneIndex++;
-            else if (m_sceneIndex > 0) m_sceneIndex--;*/
 
             m_sceneObjects[m_sceneIndex].SetActive(true);
         }
