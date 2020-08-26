@@ -4,6 +4,12 @@
     {
         Cull Off ZWrite Off ZTest Always
 
+		Tags
+		{
+			"Queue" = "Geometry"
+			"RenderType" = "Geometry"
+		}
+
         Pass
         {
 			// Custom post processing effects are written in HLSL blocks,

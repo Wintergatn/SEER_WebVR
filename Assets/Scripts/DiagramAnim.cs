@@ -6,10 +6,7 @@ using UnityEngine.UI;
 public class DiagramAnim : MonoBehaviour
 {
 
-    public GameObject text1;
-    public GameObject text2;
-    public GameObject text3;
-    public GameObject text4;
+    public GameObject text;
     public Animator logo_animator;
 
     private bool m_collided;
@@ -40,10 +37,9 @@ public class DiagramAnim : MonoBehaviour
     public void triggerAnimation() {
 
         logo_animator.CrossFade("SEER_Diagram_Popout", 0.1f);
-        //text1.SetActive(true);
-        //text2.SetActive(true);
-        //text3.SetActive(true);
-        //text4.SetActive(true);
+
+        //set any text present in the scene to inactive
+        text.SetActive(false);
         //StartCoroutine(triggerEvent());
     }
 
